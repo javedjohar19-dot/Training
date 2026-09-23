@@ -1,19 +1,17 @@
 # task_manager_v1.py
-# Version 1: Store tasks in a list, add one, display them all.
+# Version 1: Start with default tasks and add more
 tasks = ["Learn Python","Build a Task Manager"]
 
 print("=== Task Manager ===")
-print("\nYour tasks:")
+
+# Display current tasks
+print("\nCurrent tasks:")
 print(tasks)
 
-first_task = input("Enter your task: ")
-tasks.append(first_task)
+# Ask user to add a new task
+new_task = input("\nEnter a new task:")
+tasks.append(new_task)
 
-second_task = input("Enter your task: ")
-tasks.append(second_task)
-
-third_task = input("Enter your task: ")
-tasks.append(third_task)
-
-print("\nYour new tasks:")
+# Display updated list
+print("\nUpdated tasks:")
 print(tasks)
