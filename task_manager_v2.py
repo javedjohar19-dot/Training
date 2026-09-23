@@ -11,9 +11,8 @@ while True:
     print("2. View tasks")
     print("3. Mark a task as complete")
     print("4. Exit")
-    print("5. Delete a task")
 
-    choice = input("\nEnter your choice (1-5): ")
+    choice = input("\nEnter your choice (1-4): ")
 
     if choice == "1":
         # Add a task
@@ -64,30 +63,5 @@ while True:
         print("Goodbye!")
         break
 
-    elif choice == "5":
-        # Delete a task
-        if len(tasks) == 0:
-            print("No tasks to delete.")
-        else:
-            print("\n--- Your Tasks ---")
-            for index, task in enumerate(tasks):
-                print(f"{index + 1}. {task['description']} [{task['status']}]")
-            print("------------------")
-
-            task_number = input("Enter the task number to delete: ")
-
-            if task_number.isdigit():
-                task_index = int(task_number) - 1
-
-                if 0 <= task_index < len(tasks):
-                    deleted_task = tasks.pop(task_index)
-                    print(
-                        f'Deleted "{deleted_task["description"]}".'
-                    )
-                else:
-                    print("Invalid task number.")
-            else:
-                print("Please enter a valid number.")
-
     else:
-        print("Invalid choice. Please enter 1, 2, 3, 4, or 5.")
+        print("Invalid choice. Please enter 1, 2, 3 or 4.")
