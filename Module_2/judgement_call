@@ -1,0 +1,21 @@
+tasks = [
+    ["Buy groceries", "pending"],
+    ["Walk the dog", "completed"]
+]
+
+print(tasks[0][0])
+print(tasks[0][1])
+
+# Cons: you must remember what each position means
+
+# Solution: use dictionary
+
+tasks = [
+    {
+        "description": "Buy groceries",
+        "status": "pending"
+    }
+]
+
+print(tasks["description"])
+print(tasks["status"])
