@@ -1,0 +1,56 @@
+# for json
+import json
+json.dump(tasks, f, indent=4)
+tasks = json.load(f)
+
+# for csv :
+# Write a row for each task.
+# Read rows from the file and convert them back into dictionaries.
+# Handle the header row (description,status).
+import csv
+description,status
+Study Python,pending
+Practice Git,completed
+Read ISTQB notes,pending
+
+
+What becomes harder?
+1. Storing complex data:
+   JSON naturally supports dictionaries and lists, CSV only stores rows and columns
+   JSON handles this easily and CSV becomes awkward because lists and nested data don't fit naturally into rows and columns.
+
+
+2. Data structure flexibility
+   With JSON, adding a field is easy
+   CSV requires adding another column and making sure every row contains a value for it.
+
+3. Converting data
+   JSON loads directly into Python objects, CSV often requires extra conversion steps to rebuild dictionaries.
+
+What becomes easier?
+Working with spreadsheets
+   CSV files open directly in:
+   Excel
+   Google Sheets
+   LibreOffice Calc
+   
+   A user can edit tasks in a spreadsheet without knowing JSON.
+
+When is CSV a bette choice?
+1. Data is tabular.
+2. Every record has the same fields.
+3. The file will be viewed or edited in Excel.
+4. Data needs to be imported/exported between systems.
+
+When is json file a better choice?
+1. Data contains dictionaries and lists.
+2. The structure may evolve over time.
+3. The data is exchanged with web APIs.
+4. Relationships between fields become more complex.
+
+To use CSV, I would replace the json module with Python's csv module and change the save/load functions
+to write and read rows instead of JSON objects. CSV would be easier to open and edit in spreadsheet
+programs such as Excel. However, CSV is less flexible for storing complex or nested data and would
+require more conversion logic. JSON maps naturally to Python dictionaries and lists, making it easier
+to store and extend task data. For a simple table-like structure, CSV may be preferable, while JSON 
+is usually a better choice for application data that may become more complex over time.
