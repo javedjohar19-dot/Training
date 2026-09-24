@@ -1,0 +1,26 @@
+# Current design: Save after every change
+
+"""Less risk of losing data
+   The program performs more file operations."""
+add_task(tasks)
+save_tasks(tasks, TASKS_FILE)
+
+mark_task_complete(tasks)
+save_tasks(tasks, TASKS_FILE)
+
+
+# Alternative: Save only on exit
+ 
+"""Faster and more efficient
+   Risk of losing all unsaved work"""
+while True:
+    ...
+ # Save once here
+save_tasks(tasks, TASKS_FILE)
+
+"""
+Saving after every add or mark-complete operation reduces the risk of losing data if the program crashes 
+or the computer shuts down unexpectedly. The drawback is that the program performs more file writes, 
+which can be less efficient. Saving only on exit is simpler and may be faster, 
+but any changes made during the session would be lost if the program crashes before the user exits normally.
+"""
