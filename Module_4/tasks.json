@@ -1,0 +1,18 @@
+[
+    {
+        "description": "Running",
+        "status": "pending"
+    },
+    {
+        "description": "Learning",
+        "status": "pending"
+    },
+    {
+        "description": "Groceries",
+        "status": "completed"
+    },
+    {
+        "description": "Gym",
+        "status": "pending"
+    }
+]
