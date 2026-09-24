@@ -100,3 +100,9 @@ def main():
         else:
             print("Invalid choice. Please enter 1, 2, 3, or 4.")
 main()
+
+#Conclusion: If you corrupt tasks.json, you should see:
+#Save file is corrupted. Starting with an empty task list.
+
+#If you delete tasks.json, you should see:
+#No save file found. Starting with an empty task list.
