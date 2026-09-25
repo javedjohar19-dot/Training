@@ -1,0 +1,8 @@
+I would choose a Regular Task objects with priority="high" and a due date because the behavior is identical.
+
+I would introduce: class DeadlineTask(Task):
+
+
+only when deadline tasks need their own rules or methods (overdue detection, countdowns, reminders, etc.)
+
+
