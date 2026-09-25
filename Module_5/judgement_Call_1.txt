@@ -1,0 +1,57 @@
+""" Option 1: Validation only in __init__() - """
+
+class Task:
+    def __init__(self, description, status="pending"):
+        if description.strip() == "":
+            raise ValueError("Description cannot be empty")
+
+        if status not in ("pending", "completed"):
+            raise ValueError("Invalid status")
+
+        self.description = description
+        self.status = status
+
+
+""" Option 2: Validation only in add_task() - ""'
+
+def add_task(tasks):
+    description = input("Enter task description: ")
+
+    if description.strip() == "":
+        print("Description cannot be empty.")
+        return
+
+    tasks.append(Task(description))
+
+
+""" Option 3: Validation in both places """
+
+def add_task(tasks):
+    description = input("Enter task description: ")
+
+    if description.strip() == "":
+        print("Description cannot be empty.")
+        return
+
+    tasks.append(Task(description))
+
+AND
+
+class Task:
+    def __init__(self, description, status="pending"):
+        if description.strip() == "":
+            raise ValueError("Description cannot be empty")
+
+        if status not in ("pending", "completed"):
+            raise ValueError("Invalid status")
+
+        self.description = description
+        self.status = status
+
+
+Validation should primarily live in Task.__init__() because the class should guarantee that 
+every Task object is valid. This keeps the rules in one place and prevents invalid tasks from 
+being created anywhere in the program. User-facing functions such as add_task() may also perform 
+validation to provide friendly error messages before attempting to create the object. 
+The trade-off is a small amount of duplicated logic, but the program becomes safer and easier to maintain. 
+Encapsulation - the object is responsible for protecting its own state.

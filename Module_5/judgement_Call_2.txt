@@ -1,0 +1,12 @@
+If I added a created_at timestamp, I would need to update the Task class to store this new piece of data. 
+
+The __init__() method would need a new created_at attribute, and I might also update __str__() if I wanted the timestamp displayed when printing a task.
+
+I would also need to update to_dict() and from_dict(). to_dict() would include the created_at value when converting a task to a dictionary, 
+and from_dict() would read that value and use it to recreate the Task object when loading from JSON.
+
+The standalone functions would require little or no change. save_tasks() already calls task.to_dict(), 
+and load_tasks() already uses Task.from_dict(). As long as those methods are updated, the functions can continue working without needing to know about the new field.
+
+Having the serialization logic on the class itself is helpful because all knowledge about how a Task is saved and loaded is kept in one place. 
+If I add new fields such as created_at, priority, or due_date, I mainly need to update the Task class rather than every function that handles saving and loading. 
